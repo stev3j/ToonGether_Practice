@@ -13,7 +13,7 @@ fun NavGraph(navController: NavHostController) {
             HomeScreen()
         }
         composable(Screen.Week.screenRoute) {
-            WeekScreen()
+            WebToonScreen()
         }
         composable(Screen.Genre.screenRoute) {
             GenreScreen()
