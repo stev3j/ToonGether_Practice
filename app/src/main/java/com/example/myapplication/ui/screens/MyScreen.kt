@@ -43,12 +43,12 @@ fun MyScreen() {
             )
         },
     ) {
-        TabRowSample()
+        MyTabRow()
     }
 }
 
 @Composable
-fun TabRowSample() {
+fun MyTabRow() {
     var state by remember { mutableStateOf(0) }
     val titles = listOf("최근 본", "좋아요", "구매목록", "다운로드")
     Column {
@@ -59,6 +59,47 @@ fun TabRowSample() {
                     selected = state == index,
                     onClick = { state = index },
                 )
+            }
+        }
+        MyContent(state = state)
+    }
+}
+
+@Composable
+fun MyContent(
+    state: Int
+){
+    when (state) {
+        0 -> {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text(text = "최근 본")
+            }
+        }
+        1 -> {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text(text = "좋아요")
+            }
+        }
+        2 -> {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text(text = "구매목록")
+            }
+        }
+        3 -> {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text(text = "다운로드")
             }
         }
     }

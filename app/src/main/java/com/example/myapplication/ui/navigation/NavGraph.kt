@@ -15,8 +15,8 @@ fun NavGraph(navController: NavHostController) {
         composable(Screen.Week.screenRoute) {
             WebToonScreen()
         }
-        composable(Screen.Genre.screenRoute) {
-            GenreScreen()
+        composable(Screen.Short.screenRoute) {
+            ShortScreen()
         }
         composable(Screen.Community.screenRoute) {
             CommunityScreen()

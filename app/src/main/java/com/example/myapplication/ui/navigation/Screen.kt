@@ -8,7 +8,7 @@ import com.example.myapplication.R
 sealed class Screen(val title: String, val icon: Int, val screenRoute: String) {
     object Home : Screen("홈", R.drawable.ic_home, HOME)
     object Week : Screen("웹툰", R.drawable.ic_week, WEBTOON)
-    object Genre : Screen("단편", R.drawable.ic_genre, SHORT)
+    object Short : Screen("단편", R.drawable.ic_genre, SHORT)
     object Community : Screen("커뮤니티", R.drawable.ic_community, COMMUNITY)
     object My : Screen("MY", R.drawable.ic_my, MY)
 }

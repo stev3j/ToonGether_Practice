@@ -24,7 +24,7 @@ fun BottomNavBar(navController: NavController) {
     val items = listOf (
         Screen.Home,
         Screen.Week,
-        Screen.Genre,
+        Screen.Short,
         Screen.Community,
         Screen.My,
     )
