@@ -43,8 +43,6 @@ fun HomeScreen() {
     }
 }
 
-// Card Tab
-
 @Composable
 fun WebToonGrid(
     modifier: Modifier = Modifier,
