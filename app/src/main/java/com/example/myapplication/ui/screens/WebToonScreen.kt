@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Column
@@ -12,7 +13,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.myapplication.R
+import com.example.myapplication.data.PopDataList
 
 @Composable
 fun WebToonScreen() {
@@ -83,12 +87,7 @@ fun WebtoonContent(
 ){
     when (state) {
         0 -> {
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier.fillMaxSize()
-            ) {
-                Text(text = "Home!!!")
-            }
+            Webtoon_Home()
         }
         1 -> {
             Box(
@@ -138,5 +137,34 @@ fun WebtoonContent(
                 Text(text = "action")
             }
         }
+    }
+}
+
+@Composable
+fun Webtoon_Home() {
+    Column() {
+        Image(
+            painter = painterResource(id = R.drawable.title_like),
+            contentDescription = null,
+            modifier = Modifier.width(393.dp).height(302.dp)
+        )
+        Text(
+            text = "인기 판타지 웹툰",
+            modifier = Modifier.padding(top = 20.dp, start = 16.dp)
+        )
+        WebToonGrid(
+            modifier = Modifier.padding(top = 6.dp),
+            items = PopDataList,
+            width = 119, height = 165
+        )
+        Text(
+            text = "HOT! 신작",
+            modifier = Modifier.padding(top = 20.dp, start = 16.dp)
+        )
+        WebToonGrid(
+            modifier = Modifier.padding(top = 6.dp),
+            items = PopDataList,
+            width = 119, height = 165
+        )
     }
 }

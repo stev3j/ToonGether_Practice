@@ -17,12 +17,12 @@ val RecentDataList = listOf(
 ).map { WebToonData(it) }
 
 val PopDataList = listOf(
-    R.drawable.example_image2,
-    R.drawable.example_image2,
-    R.drawable.example_image2,
-    R.drawable.example_image2,
-    R.drawable.example_image2,
-    R.drawable.example_image2,
+    R.drawable.wizard,
+    R.drawable.black_wizard,
+    R.drawable.like,
+    R.drawable.dog,
+    R.drawable.lonely_dev,
+    R.drawable.stalker,
 ).map { WebToonData(it) }
 
 val MyRecentDataList = listOf(
