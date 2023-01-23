@@ -7,6 +7,14 @@ data class WebToonData(
     @DrawableRes val drawable: Int,
 )
 
+val TitleList = listOf(
+    R.drawable.title_like,
+    R.drawable.title_dog,
+    R.drawable.title_thorn,
+    R.drawable.title_black_wizard,
+    R.drawable.title_wizard,
+).map { WebToonData(it) }
+
 val RecentDataList = listOf(
     R.drawable.example_image,
     R.drawable.example_image,

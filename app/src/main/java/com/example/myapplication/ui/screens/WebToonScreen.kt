@@ -1,9 +1,15 @@
+@file:OptIn(ExperimentalSnapperApi::class)
+
 package com.example.myapplication.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.*
 import androidx.compose.material.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material.icons.Icons
@@ -17,6 +23,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.R
 import com.example.myapplication.data.PopDataList
+import com.example.myapplication.data.TitleList
+import dev.chrisbanes.snapper.ExperimentalSnapperApi
+import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
 
 @Composable
 fun WebToonScreen() {
@@ -143,11 +152,7 @@ fun WebtoonContent(
 @Composable
 fun Webtoon_Home() {
     Column() {
-        Image(
-            painter = painterResource(id = R.drawable.title_like),
-            contentDescription = null,
-            modifier = Modifier.width(393.dp).height(302.dp)
-        )
+        HomeTitleScreen()
         Text(
             text = "인기 판타지 웹툰",
             modifier = Modifier.padding(top = 20.dp, start = 16.dp)
@@ -166,5 +171,25 @@ fun Webtoon_Home() {
             items = PopDataList,
             width = 119, height = 165
         )
+    }
+}
+
+@Composable
+fun HomeTitleScreen() {
+    val lazyListState: LazyListState = rememberLazyListState()
+
+    LazyRow(
+        state = lazyListState,
+        flingBehavior = rememberSnapperFlingBehavior(lazyListState),
+    ) {
+        items(TitleList) { item ->
+            Image(
+                painter = painterResource(item.drawable),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(393.dp)
+                    .height(302.dp)
+            )
+        }
     }
 }
